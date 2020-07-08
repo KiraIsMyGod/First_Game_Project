@@ -262,7 +262,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sp
             [myTiles.tile0,sprites.castle.tileGrass2,sprites.castle.tilePath1,sprites.castle.tilePath4,sprites.castle.tilePath7,sprites.castle.tilePath8,sprites.castle.tilePath9,sprites.castle.tilePath6,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath5,sprites.castle.tileGrass1,sprites.castle.tileGrass3,sprites.builtin.forestTiles0,sprites.castle.rock0,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.collectibleBlueCrystal,sprites.dungeon.darkGroundNorthWest1,sprites.dungeon.darkGroundNorthEast1,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.floorLight0,sprites.dungeon.darkGroundSouthWest1,sprites.dungeon.darkGroundSouthEast1,sprites.dungeon.doorLockedWest,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenSwitchDown,sprites.dungeon.floorLight2,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterSouth1,sprites.dungeon.purpleOuterSouth0,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterWest0,sprites.dungeon.purpleOuterWest1,sprites.dungeon.purpleOuterEast0,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterEast1,sprites.dungeon.purpleOuterNorth0,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.purpleInnerSouthWest,sprites.dungeon.purpleInnerNorthEast,sprites.dungeon.purpleInnerSouthEast,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterWest2,sprites.dungeon.purpleOuterSouth2,sprites.dungeon.purpleOuterEast2,sprites.dungeon.stairWest,sprites.dungeon.stairSouth,sprites.dungeon.stairEast,sprites.dungeon.stairNorth,sprites.dungeon.doorClosedWest,sprites.dungeon.chestClosed,sprites.dungeon.chestOpen],
             TileScale.Sixteen
         ))
-    Seeker_Bullet = sprites.create(img`
+    Power_Ups = sprites.create(img`
 . . e e e e e e . . 
 . e e e e e e e e . 
 e e e e e e e e e e 
@@ -274,7 +274,7 @@ e e e e e e e e e e
 . e e e e e e e e . 
 . . e e e e e e . . 
 `, SpriteKind.Power_Up)
-    Seeker_Bullet.setPosition(60, 15)
+    Power_Ups.setPosition(75, 25)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Direction != -100) {
@@ -305,7 +305,7 @@ info.onLifeZero(function () {
     game.splash("Game Over")
     game.reset()
 })
-let Seeker_Bullet: Sprite = null
+let Power_Ups: Sprite = null
 let projectile: Sprite = null
 let Direction = 0
 let Bad_Square: Sprite = null
