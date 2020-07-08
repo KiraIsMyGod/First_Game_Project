@@ -50,6 +50,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairSouth, function (spr
     Good_Square.setPosition(130, 230)
     Bad_Square.destroy()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Power_Up, function (sprite, otherSprite) {
+    Power_Ups.destroy(effects.rings, 500)
+    controller.moveSprite(Good_Square, 170, 170)
+    pause(5000)
+    controller.moveSprite(Good_Square, 100, 100)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (sprite, location) {
     tiles.setTilemap(tiles.createTilemap(
             hex`10001000383f443d443f4449493f443d443f44373a1b1c1b1c1b1c1b1c1b1c1b1c1b1c3e451112111211121112111211121112473a1b1c1b1c1b1c1b1c1b1c1b1c1b1c3e451112111211121112111211121112473a1b1c1b1c1b1c1b1c1b1c1b1c1b1c3e451112111211121112111211121112473a1b1c1b1c1b1c1b1c1b1c1b1c1b1c48451112111211121112111211121112483a1b1c1b1c1b1c1b1c1b1c1b1c1b1c474511121112111211121112111211123c3a1b1c1b1c1b1c1b1c1b1c1b1c1b1c474511121112111211121112111211123e3a1b1c1b1c1b1c1b1c1b1c1b1c1b1c474511121112111211121112111211123e39354635463546354635463546354634`,
@@ -305,9 +311,9 @@ info.onLifeZero(function () {
     game.splash("Game Over")
     game.reset()
 })
-let Power_Ups: Sprite = null
 let projectile: Sprite = null
 let Direction = 0
+let Power_Ups: Sprite = null
 let Bad_Square: Sprite = null
 let Good_Square: Sprite = null
 game.splash("Good Square vs Bad Squares", "WASD to move, B to Shoot")
@@ -358,7 +364,7 @@ Good_Square = sprites.create(img`
 scene.cameraFollowSprite(Good_Square)
 Good_Square.setPosition(20, 100)
 controller.moveSprite(Good_Square, 100, 100)
-game.onUpdateInterval(5000, function () {
+game.onUpdateInterval(2000, function () {
     Bad_Square = sprites.create(img`
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
